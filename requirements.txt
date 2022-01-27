@@ -1,0 +1,2 @@
+pyre2==0.3.6
+python-magic==0.4.24
