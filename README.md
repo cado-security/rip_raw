@@ -3,7 +3,7 @@
 Rip Raw is a small tool to analyse the memory of compromised Linux systems.
 It is similar in purpose to Bulk Extractor, but particularly focused on extracting system Logs from memory dumps from Linux systems. This enables you to analyse systems without needing to generate a profile.
 
-This is not a replacement for structured memory analysis tools such as Rekall and Volatility which use a profile to perform a more structured analysis of memory.
+This is not a replacement for tools such as Rekall and Volatility which use a profile to perform a more structured analysis of memory.
 
 Rip Raw works by taking a Raw Binary such as a Memory Dump and carves files and logs using:
 
@@ -11,7 +11,7 @@ Rip Raw works by taking a Raw Binary such as a Memory Dump and carves files and 
 
 * File headers and file magic
 
-* Log entry
+* Log entries
 
 Then puts them in a zip file for secondary processing by other tools such as Cado Response or a SIEM such as Splunk (examples below).
 
