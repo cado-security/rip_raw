@@ -30,7 +30,10 @@ from typing import Union
 from typing import Optional
 import mimetypes
 
-import re2
+try:
+    import re2 as re
+except ImportError:
+    import re
 import magic
 
 
@@ -38,9 +41,9 @@ import magic
 ASCII_BYTE = " !\"#\$%&'\(\)\*\+,-\./0123456789:;<=>\?@ABCDEFGHIJKLMNOPQRSTUVWXYZ\[\]\^_`abcdefghijklmnopqrstuvwxyz\{\|\}\\\~\t"
 n = 6
 combined_reg = "(?:[%s]\x00|[%s]){%d,}" % (ASCII_BYTE, ASCII_BYTE, n)
-combined_re = re2.compile(combined_reg)
+combined_re = re.compile(combined_reg)
 # Allow lines with 7+ chars
-good_line = re2.compile("[ 0-9a-zA-Z\.:]{7,}")
+good_line = re.compile("[ 0-9a-zA-Z\.:]{7,}")
 
 # Place extracted files here
 EXTRACT_FOLDER = "/tmp/extracted_files/"
